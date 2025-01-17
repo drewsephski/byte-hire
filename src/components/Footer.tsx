@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">ByteHire</h3>
+            <h3 className="text-2xl font-bold hover:text-mint transition-colors">ByteHire</h3>
             <p className="text-white/60 max-w-xs">
               Revolutionizing tech recruitment with AI-powered matching and seamless hiring processes.
             </p>
