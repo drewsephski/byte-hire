@@ -1,48 +1,83 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-4">
+    <motion.section 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="pt-32 pb-20 px-4"
+    >
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="flex items-center gap-2 bg-mint/10 w-fit px-4 py-2 rounded-full border border-mint/20 transition-colors hover:bg-mint/20">
+        <motion.div 
+          initial={{ x: -50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="space-y-8"
+        >
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 bg-mint/10 w-fit px-4 py-2 rounded-full border border-mint/20 transition-all hover:bg-mint/20"
+          >
             <Star className="w-4 h-4 text-mint" />
             <span className="text-mint text-sm font-medium">AI-Powered Recruitment</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
-            Hire top
-            <br />
-            tech talent
-            <br />
-            wisely
-          </h1>
-          <p className="text-lg text-white/80 max-w-md">
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold leading-tight text-white"
+          >
+            Hire top<br />tech talent<br />wisely
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-lg text-white/80 max-w-md"
+          >
             Find and hire the best tech professionals for your team with our AI-powered recruitment platform.
-          </p>
-          <div className="flex items-center gap-4">
-            <Button className="bg-mint hover:bg-mint/90 text-forest font-medium px-8 py-6 text-lg transition-transform hover:scale-105">
+          </motion.p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="flex items-center gap-4"
+          >
+            <Button className="bg-mint/80 backdrop-blur-sm hover:bg-mint/90 text-forest font-medium px-8 py-6 text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
               Get Started <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" className="border-mint/20 text-mint hover:bg-mint/10 transition-transform hover:scale-105">
+            <Button variant="outline" className="border-mint/20 text-mint hover:bg-mint/10 transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
               Watch Demo
             </Button>
-          </div>
-        </div>
-        <div className="relative">
+          </motion.div>
+        </motion.div>
+        <motion.div 
+          initial={{ x: 50, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="relative"
+        >
           <div className="absolute -inset-0.5 bg-mint/20 rounded-2xl blur opacity-30" />
-          <img
+          <motion.img
+            whileHover={{ scale: 1.02, rotate: -1 }}
+            transition={{ type: "spring", stiffness: 300 }}
             src="https://images.unsplash.com/photo-1550439062-609e1531270e"
             alt="Tech professional coding"
-            className="relative rounded-2xl shadow-2xl transition-transform hover:scale-[1.02]"
+            className="relative rounded-2xl shadow-2xl"
           />
-          <div className="absolute -bottom-10 -left-10 bg-forest-light p-6 rounded-xl shadow-xl border border-mint/10 transition-all hover:border-mint/30 hover:shadow-mint/20">
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            className="absolute -bottom-10 -left-10 bg-forest-light/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-mint/10 transition-all hover:border-mint/30 hover:shadow-mint/20"
+          >
             <p className="text-mint text-4xl font-bold">124k+</p>
             <p className="text-white/80">Active candidates</p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
