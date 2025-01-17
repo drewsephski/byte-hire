@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from "framer-motion";
 import { Users, Clock, Building2, Award, Cpu, Globe } from "lucide-react";
 
