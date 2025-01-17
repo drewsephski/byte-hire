@@ -51,9 +51,9 @@
 
 /* Animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% { transform: translateY(0px) rotate3d(0); }
+  50% { transform: translateY(-10px) rotate3d(1, 2, 3, 2deg); }
+  100% { transform: translateY(0px) rotate3d(0); }
 }
 
 .floating {
@@ -66,11 +66,16 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(100, 255, 218, 0.1);
   transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .glass-card:hover {
+  transform: rotate3d(1, 2, 3, 5deg);
   border-color: rgba(100, 255, 218, 0.3);
-  box-shadow: 0 8px 32px rgba(100, 255, 218, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(100, 255, 218, 0.1),
+    0 0 15px rgba(100, 255, 218, 0.2);
 }
 
 /* Hover effects */
@@ -93,4 +98,29 @@
 .scroll-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Light trail effect */
+.button-trail {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-trail::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+              rgba(100, 255, 218, 0.2) 0%,
+              transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.button-trail:hover::after {
+  opacity: 1;
 }
