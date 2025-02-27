@@ -21,10 +21,10 @@ const Hero = () => {
         >
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 bg-mint/10 w-fit px-4 py-2 rounded-full border border-mint/20 transition-all hover:bg-mint/20"
+            className="flex items-center gap-2 bg-purple/10 w-fit px-4 py-2 rounded-full border border-purple/20 transition-all hover:bg-purple/20"
           >
-            <Star className="w-4 h-4 text-mint" />
-            <span className="text-mint text-sm font-medium">AI-Powered Recruitment</span>
+            <Star className="w-4 h-4 text-purple" />
+            <span className="text-purple text-sm font-medium">AI-Powered Recruitment</span>
           </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -49,11 +49,11 @@ const Hero = () => {
             className="flex items-center gap-4"
           >
             <Link to="/get-started">
-              <Button className="bg-oceanic hover:bg-oceanic-deep text-white font-medium px-8 py-6 text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-oceanic/20">
+              <Button className="purple-gradient-btn button-hover-effect text-white font-medium px-8 py-6 text-lg">
                 Get Started <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button variant="outline" className="border-mint/20 text-mint hover:bg-mint/10 transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
+            <Button variant="outline" className="border-purple/20 text-purple hover:bg-purple/10 button-hover-effect">
               Watch Demo
             </Button>
           </motion.div>
@@ -64,7 +64,7 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="relative"
         >
-          <div className="absolute -inset-0.5 bg-gradient-to-br from-mint/20 to-oceanic/20 rounded-2xl blur opacity-30" />
+          <div className="absolute -inset-0.5 bg-gradient-to-br from-purple/20 to-oceanic/20 rounded-2xl blur opacity-30" />
           <motion.img
             whileHover={{ scale: 1.02, rotate: -1 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -74,9 +74,9 @@ const Hero = () => {
           />
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="absolute -bottom-10 -left-10 bg-forest-light/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-oceanic/10 transition-all hover:border-oceanic/30 hover:shadow-oceanic/20"
+            className="absolute -bottom-10 -left-10 bg-forest-light/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-purple/10 transition-all hover:border-purple/30 hover:shadow-purple/20"
           >
-            <p className="text-oceanic text-4xl font-bold">124k+</p>
+            <p className="text-purple text-4xl font-bold">124k+</p>
             <p className="text-white/80">Active candidates</p>
           </motion.div>
         </motion.div>

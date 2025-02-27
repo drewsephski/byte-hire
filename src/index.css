@@ -32,7 +32,7 @@
     @apply bg-forest text-white antialiased;
     background-image: 
       radial-gradient(circle at 50% 0%, rgba(100, 255, 218, 0.05), transparent 70%),
-      radial-gradient(circle at 0% 50%, rgba(14, 165, 233, 0.025), transparent 50%),
+      radial-gradient(circle at 0% 50%, rgba(155, 135, 245, 0.03), transparent 50%),
       radial-gradient(circle at 100% 50%, rgba(100, 255, 218, 0.025), transparent 50%);
     background-size: 100% 100%, 50% 100%, 50% 100%;
     background-position: center top, left center, right center;
@@ -47,7 +47,7 @@
 .glass-nav {
   background: rgba(10, 31, 47, 0.8);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  border-bottom: 1px solid rgba(155, 135, 245, 0.1);
 }
 
 /* Animations */
@@ -69,20 +69,59 @@
 .glass-card {
   background: rgba(19, 43, 65, 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(100, 255, 218, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Use a more dynamic easing */
+  border: 1px solid rgba(155, 135, 245, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
   perspective: 1000px;
-  transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0); /* Initial state */
+  transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0);
 }
 
 .glass-card:hover {
-  transform: translate3d(0, -5px, 20px) scale(1.02) rotateX(3deg) rotateY(3deg); /* More balanced 3D effect */
-  border-color: rgba(100, 255, 218, 0.3);
+  transform: translate3d(0, -5px, 20px) scale(1.02) rotateX(3deg) rotateY(3deg);
+  border-color: rgba(155, 135, 245, 0.3);
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.1),
-    0 10px 20px rgba(100, 255, 218, 0.1),
-    0 0 15px rgba(100, 255, 218, 0.2);
+    0 10px 20px rgba(155, 135, 245, 0.08),
+    0 0 15px rgba(155, 135, 245, 0.2);
+}
+
+/* Button hover effects */
+.button-hover-effect {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-hover-effect:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(155, 135, 245, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: all 0.6s ease;
+}
+
+.button-hover-effect:hover:before {
+  transform: translateX(100%);
+}
+
+.button-hover-effect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Purple gradient button */
+.purple-gradient-btn {
+  background: linear-gradient(135deg, rgba(155, 135, 245, 0.9), rgba(76, 29, 149, 0.9));
+  transition: all 0.3s ease;
+}
+
+.purple-gradient-btn:hover {
+  background: linear-gradient(135deg, rgba(155, 135, 245, 1), rgba(76, 29, 149, 1));
+  box-shadow: 0 0 20px rgba(155, 135, 245, 0.5);
 }
 
 /* Hover effects */
@@ -91,8 +130,34 @@
 }
 
 .hover-glow:hover {
-  text-shadow: 0 0 8px rgba(100, 255, 218, 0.6);
-  color: rgba(100, 255, 218, 1);
+  text-shadow: 0 0 8px rgba(155, 135, 245, 0.6);
+  color: rgba(155, 135, 245, 1);
+}
+
+/* Card interaction animations */
+.interactive-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.interactive-card:hover {
+  transform: translateY(-10px);
+}
+
+.interactive-card .card-icon {
+  transition: all 0.4s ease;
+}
+
+.interactive-card:hover .card-icon {
+  transform: scale(1.2) rotate(10deg);
+  color: #9B87F5;
+}
+
+.interactive-card .card-content {
+  transition: all 0.3s ease;
+}
+
+.interactive-card:hover .card-content {
+  transform: translateY(-5px);
 }
 
 /* Scroll animations */
@@ -120,7 +185,7 @@
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
-              rgba(100, 255, 218, 0.2) 0%,
+              rgba(155, 135, 245, 0.2) 0%,
               transparent 50%);
   opacity: 0;
   transition: opacity 0.3s;
@@ -131,7 +196,7 @@
   opacity: 1;
 }
 
-/* Oceanic gradients */
+/* Gradient backgrounds */
 .bg-gradient-oceanic {
   background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(12, 74, 110, 0.1));
 }
@@ -140,10 +205,23 @@
   background: linear-gradient(135deg, rgba(19, 43, 65, 0.7), rgba(6, 24, 37, 0.8));
 }
 
+.bg-gradient-purple {
+  background: linear-gradient(135deg, rgba(155, 135, 245, 0.15), rgba(76, 29, 149, 0.1));
+}
+
+.bg-gradient-purple-deep {
+  background: linear-gradient(135deg, rgba(76, 29, 149, 0.7), rgba(30, 12, 60, 0.9));
+}
+
+/* Gradient shadows */
 .shadow-gradient-oceanic {
   box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15);
 }
 
 .shadow-gradient-mint {
   box-shadow: 0 8px 32px rgba(100, 255, 218, 0.15);
+}
+
+.shadow-gradient-purple {
+  box-shadow: 0 8px 32px rgba(155, 135, 245, 0.2);
 }

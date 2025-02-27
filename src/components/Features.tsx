@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import { Star, Award, ShieldCheck, Code, Users, Zap, Clock, Target, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
@@ -90,16 +91,19 @@ const Features = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="glass-card floating button-trail p-8 rounded-xl transform transition-all duration-300"
+              className="glass-card interactive-card button-trail p-8 rounded-xl transform transition-all duration-300"
+              style={{ background: `linear-gradient(135deg, rgba(19, 43, 65, 0.8), rgba(25, 25, 65, 0.7))` }}
             >
-              <div className="w-12 h-12 bg-mint/20 rounded-full flex items-center justify-center mb-6">
-                {React.createElement(feature.icon, { className: "w-6 h-6 text-mint" })}
+              <div className="w-12 h-12 bg-purple/20 rounded-full flex items-center justify-center mb-6 card-icon">
+                {React.createElement(feature.icon, { className: "w-6 h-6 text-purple" })}
               </div>
-              <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-white/80 mb-6">{feature.description}</p>
-              <div className="mt-auto">
-                <div className="text-mint text-2xl font-bold">{feature.stats.value}</div>
-                <div className="text-white/60 text-sm">{feature.stats.label}</div>
+              <div className="card-content">
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-white/80 mb-6">{feature.description}</p>
+                <div className="mt-auto">
+                  <div className="text-purple text-2xl font-bold">{feature.stats.value}</div>
+                  <div className="text-white/60 text-sm">{feature.stats.label}</div>
+                </div>
               </div>
             </motion.div>
           ))}

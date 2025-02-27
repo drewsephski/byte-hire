@@ -36,6 +36,12 @@ export default {
           DEFAULT: "#0EA5E9", // New oceanic blue color
           deep: "#0C4A6E", // Deep oceanic blue
           light: "#7DD3FC", // Light oceanic blue
+        },
+        purple: {
+          light: "#D6BCFA", // Light purple tone
+          DEFAULT: "#9B87F5", // Medium purple tone
+          deep: "#7E69AB", // Deep purple tone
+          dark: "#4C1D95", // Dark purple tone
         }
       },
       fontFamily: {
@@ -44,10 +50,12 @@ export default {
       boxShadow: {
         'gradient-oceanic': '0 4px 30px -10px rgba(14, 165, 233, 0.3)',
         'gradient-mint': '0 4px 30px -10px rgba(100, 255, 218, 0.3)',
+        'gradient-purple': '0 4px 30px -10px rgba(155, 135, 245, 0.3)',
       },
       backgroundImage: {
         'gradient-oceanic': 'linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(12, 74, 110, 0.1))',
         'gradient-forest': 'linear-gradient(135deg, rgba(19, 43, 65, 0.7), rgba(6, 24, 37, 0.8))',
+        'gradient-purple': 'linear-gradient(135deg, rgba(155, 135, 245, 0.2), rgba(76, 29, 149, 0.1))',
       },
     },
   },
