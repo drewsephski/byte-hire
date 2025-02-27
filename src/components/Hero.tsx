@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -46,9 +48,11 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex items-center gap-4"
           >
-            <Button className="bg-mint/80 backdrop-blur-sm hover:bg-mint/90 text-forest font-medium px-8 py-6 text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
-              Get Started <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/get-started">
+              <Button className="bg-oceanic hover:bg-oceanic-deep text-white font-medium px-8 py-6 text-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-oceanic/20">
+                Get Started <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
             <Button variant="outline" className="border-mint/20 text-mint hover:bg-mint/10 transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
               Watch Demo
             </Button>
@@ -60,7 +64,7 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="relative"
         >
-          <div className="absolute -inset-0.5 bg-mint/20 rounded-2xl blur opacity-30" />
+          <div className="absolute -inset-0.5 bg-gradient-to-br from-mint/20 to-oceanic/20 rounded-2xl blur opacity-30" />
           <motion.img
             whileHover={{ scale: 1.02, rotate: -1 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -70,9 +74,9 @@ const Hero = () => {
           />
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="absolute -bottom-10 -left-10 bg-forest-light/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-mint/10 transition-all hover:border-mint/30 hover:shadow-mint/20"
+            className="absolute -bottom-10 -left-10 bg-forest-light/80 backdrop-blur-md p-6 rounded-xl shadow-xl border border-oceanic/10 transition-all hover:border-oceanic/30 hover:shadow-oceanic/20"
           >
-            <p className="text-mint text-4xl font-bold">124k+</p>
+            <p className="text-oceanic text-4xl font-bold">124k+</p>
             <p className="text-white/80">Active candidates</p>
           </motion.div>
         </motion.div>

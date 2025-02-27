@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -15,18 +16,23 @@ const Navbar = () => {
           ByteHire
         </Link>
         <div className="hidden md:flex items-center space-x-8">
-          {["App", "Pricing", "About Us", "Blog"].map((item, index) => (
+          {[
+            { name: "App", path: "/app" }, 
+            { name: "Pricing", path: "/pricing" }, 
+            { name: "About Us", path: "/about-us" }, 
+            { name: "Blog", path: "/blog" }
+          ].map((item, index) => (
             <motion.div
-              key={item}
+              key={item.name}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index, duration: 0.6 }}
             >
               <Link 
-                to={`/${item.toLowerCase().replace(" ", "-")}`}
+                to={item.path}
                 className="text-white/90 hover:text-mint transition-all hover:scale-105"
               >
-                {item}
+                {item.name}
               </Link>
             </motion.div>
           ))}
@@ -36,10 +42,12 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          <Button className="bg-mint/80 backdrop-blur-sm hover:bg-mint/90 text-forest font-medium 
-                           transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
-            Get started
-          </Button>
+          <Link to="/get-started">
+            <Button className="bg-mint/80 backdrop-blur-sm hover:bg-mint/90 text-forest font-medium 
+                             transition-all hover:scale-105 hover:shadow-lg hover:shadow-mint/20">
+              Get started
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </motion.nav>
