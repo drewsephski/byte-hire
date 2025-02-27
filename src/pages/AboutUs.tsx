@@ -1,38 +1,39 @@
+
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import React from "react";
 const AboutUsPage = () => {
-  const teamMembers = [{
-    name: "David Chen",
-    role: "CEO & Co-Founder",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&h=300",
-    bio: "Former tech recruiter with over 15 years of experience connecting talent with top companies."
+  const technologies = [{
+    name: "React",
+    role: "Frontend Framework",
+    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=300&h=300",
+    bio: "Our primary UI library for building dynamic, responsive interfaces with a component-based architecture."
   }, {
-    name: "Sarah Johnson",
-    role: "CTO & Co-Founder",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&h=300",
-    bio: "AI expert with a Ph.D. from MIT and previous experience leading engineering at tech giants."
+    name: "Node.js",
+    role: "Backend Runtime",
+    image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=300&h=300",
+    bio: "Powers our server-side applications, providing a fast, scalable JavaScript runtime environment for API services."
   }, {
-    name: "Michael Rodriguez",
-    role: "Head of Product",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=300&h=300",
-    bio: "Product visionary who has built recruitment tools used by Fortune 500 companies."
+    name: "TypeScript",
+    role: "Programming Language",
+    image: "https://images.unsplash.com/photo-1637058267061-1813eb071942?auto=format&fit=crop&w=300&h=300",
+    bio: "Enhances our JavaScript codebase with static typing, improving maintainability and catching errors early."
   }, {
-    name: "Lisa Zhang",
-    role: "Chief Data Officer",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&h=300",
-    bio: "Data scientist specializing in matching algorithms and predictive recruitment analytics."
+    name: "MongoDB",
+    role: "Database Technology",
+    image: "https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&w=300&h=300",
+    bio: "Our NoSQL database solution for storing and retrieving data with flexibility for rapid iterations and scalability."
   }, {
-    name: "James Wilson",
-    role: "VP of Engineering",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&h=300",
-    bio: "Software architect who has scaled platforms serving millions of users worldwide."
+    name: "TensorFlow",
+    role: "Machine Learning Framework",
+    image: "https://images.unsplash.com/photo-1655720828018-edd2daec9349?auto=format&fit=crop&w=300&h=300",
+    bio: "Powers our AI matching algorithms, providing advanced machine learning capabilities for recruitment optimization."
   }, {
-    name: "Emily Patel",
-    role: "VP of Customer Success",
-    image: "https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?auto=format&fit=crop&w=300&h=300",
-    bio: "Client relationship expert dedicated to ensuring success for companies of all sizes."
+    name: "AWS",
+    role: "Cloud Infrastructure",
+    image: "https://images.unsplash.com/photo-1549605659-32d82da3a059?auto=format&fit=crop&w=300&h=300",
+    bio: "Hosts our distributed systems with reliable, scalable cloud computing services for global availability."
   }];
   const milestones = [{
     year: "2018",
@@ -109,9 +110,9 @@ const AboutUsPage = () => {
           delay: 0.4,
           duration: 0.6
         }} className="mb-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Our Team</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Our Technologies</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 bg-transparent rounded-xl">
-              {teamMembers.map((member, index) => <motion.div key={index} initial={{
+              {technologies.map((tech, index) => <motion.div key={index} initial={{
               opacity: 0,
               y: 20
             }} animate={{
@@ -120,12 +121,14 @@ const AboutUsPage = () => {
             }} transition={{
               delay: 0.1 * index + 0.4,
               duration: 0.6
-            }} className="glass-card overflow-hidden rounded-xl">
-                  <img src={member.image} alt={member.name} className="w-full h-64 object-cover" />
+            }} className="glass-card interactive-card overflow-hidden rounded-xl shadow-gradient-purple">
+                  <div className="h-64 flex items-center justify-center p-6 bg-gradient-purple-deep">
+                    <img src={tech.image} alt={tech.name} className="w-32 h-32 object-contain" />
+                  </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-mint">{member.name}</h3>
-                    <p className="text-oceanic-light mb-3">{member.role}</p>
-                    <p className="text-white/80">{member.bio}</p>
+                    <h3 className="text-xl font-bold text-purple">{tech.name}</h3>
+                    <p className="text-purple-light mb-3">{tech.role}</p>
+                    <p className="text-white/80">{tech.bio}</p>
                   </div>
                 </motion.div>)}
             </div>
