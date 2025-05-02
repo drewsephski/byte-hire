@@ -1,1 +1,3 @@
-# Welcome to your Lovable Project!
+# Welcome to byte-hire
+
+## Multipage frontend for job platform
